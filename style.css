@@ -1,21 +1,63 @@
+html, body, .grid-container { height: 100%; margin: 0; }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.2fr;
+  grid-template-rows: 150px 1fr 100px;
+  gap:  10px;
+  grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+}
 
 body {
   font-family: Open Sans;
 }
 
-h1 {
-  text-align: start;
+header { grid-area: header; 
+ background-color: white;
 }
 
-div {
-  border: 1px outset black;
-  background-color: lightblue;
-  text-align: center;
+.maintitle {
+  text-align: center
 }
-footer {
-  width: 100%;
-  text-align: center;
-  background-color: white;
-  padding: 10px 0px;
+
+main { grid-area: main;
+background-color: grey;
 }
+
+nav { grid-area: nav; 
+background-color: lightblue;
+}
+
+aside { grid-area: aside; 
+background-color: orange;
+}
+
+footer { grid-area: footer; 
+background-color: pink;
+}
+
+/*---Media Query for Responsive Screen Adaptation*/
+@media screen and (max-width:460px) {
+  .grid-container {
+    display: block;
+   
+  }
+  header,
+  nav,
+  main,
+  aside,
+  footer {
+    width: 100%;
+    min-height: 200px; 
+  }
+}
+
+/* For presentation only, no need to copy the code below 
+.grid-container * {
+  border: 1px solid black;
+  position: relative;
+}
+*/
