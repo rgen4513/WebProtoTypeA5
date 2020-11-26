@@ -17,7 +17,6 @@ h1 {
     "header header header"
     "nav nav nav"
     "main main main";
-    
 }
 
 body {
@@ -25,9 +24,9 @@ body {
 }
 
 header { 
- display: flex;
- justify-content: center;
  grid-area:header; 
+ display: flex;
+ justify-content: space-around;
  position: relative;
  text-align:center;
  background-color: white;
@@ -40,7 +39,11 @@ header {
 }
 
 .box {
-  
+  width: 100px;
+  height: 80px;
+  background-color: lightblue;
+  text-align: center;
+  padding: 10px;
 }
 
 
@@ -53,6 +56,7 @@ header {
 
 nav { 
 position: sticky;
+font-family: 'Montserrat', 'sans-serif';
 top: 0;
 grid-area: nav; 
 text-align: center;
@@ -60,24 +64,21 @@ z-index: 5;
 }
 
 ul {
-  display: flex;
-  justify-content: space-evenly;
+ display: flex;
+ justify-content: space-evenly;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #A3D5FF;
 }
 
-media = "screen and (min-width: 650px)"
-@ media screen and (min-width: 885px)
 nav ul {
-  
   list-style: none;
   padding: 5px;
 }
 
 li { 
-  display: inline-block;
+  display: flex;
 }
 
 li a {
@@ -91,6 +92,18 @@ li a:hover {
   background-color: red;
   color: white;
   border-radius: 6px;
+}
+
+@media screen and (max-width: 600px) {
+  ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  }
+
+  nav { 
+    position: relative;
+  }
 }
 
 main { grid-area: main;
@@ -108,43 +121,91 @@ main { grid-area: main;
   z-index: 1;
 }
 
+@media screen and (max-width: 600px) {
+ .grid-container {
+  display: flex;
+  flex-direction: column;
+ }
+
+ .overlay-script {
+  height: 200px;
+ }
+}
+
 .overlay-script {
   background: rgba(132, 144, 175, 0.4);
+  border-radius: 5px;
+  max-height: 700px;
   padding: 5%;
-  text-emphasis: stroke;
-  font-size: 2vw;
+  font-size: 3vh;
   text-align: left;
   position: absolute;
   left:4%;
   color: white;
 }
 
-.information-container {
-  background: #EEF5FC;
-  text-align: center;
-  padding: 2%;
-  margin: 5%;
-  border: 2px;
-  z-index: 2;
-}
-
 .donatebutton {
   background-color: red;
+  margin-top: 10px;
   border-radius: 5px;
   border: white;
   color: white;
   padding: 15px 32px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 12px 2px;
+  font-size: 25px;
+  margin: 20px;
   cursor: pointer;
 }
 
 .donatebutton:hover {
   color: red;
   background-color: white;
+}
+
+.information-container {
+  text-align: center;
+  padding: 2%;
+  border: 2px;
+  z-index: 2;
+}
+
+.blurb {
+  background-color: #EEF5FC;
+  border-radius: 5px;
+  padding: 2%;
+  margin: 2%;
+}
+
+.video-container {
+  margin: 4%;
+}
+
+.videolink {
+  margin: 10px;
+}
+
+.blockout {
+  background-color:#DE8C7D;
+  box-sizing: border-box;
+  padding: 3px;
+  width: 100%;
+}
+
+.facts {
+display: flex;
+justify-content: space-evenly;
+}
+
+.first-fact {
+background-color: #A3D5FF
+}
+
+.second-fact {
+background-color: #DE8C7D
+}
+
+.third-fact {
+background-color: black
 }
 
 footer { 
