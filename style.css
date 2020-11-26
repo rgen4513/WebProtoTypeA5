@@ -4,16 +4,20 @@ h2 {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+h1 {
+  font-family: 'Montserrat', 'sans-serif';
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 0.2fr 1fr 0.2fr;
-  grid-template-rows: 0.1fr 43px 1fr 100px;
+  grid-template-rows: 0.1fr 41px 1fr;
   gap: 3px;
   grid-template-areas:
     "header header header"
     "nav nav nav"
-    "main main main"
-    "footer footer footer";
+    "main main main";
+    
 }
 
 body {
@@ -68,6 +72,14 @@ ul {
   background-color: #A3D5FF;
 }
 
+media = "screen and (min-width: 650px)"
+@ media screen and (min-width: 885px)
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 li {
   display: inline-block;
 }
@@ -101,9 +113,20 @@ main { grid-area: main;
 }
 
 .overlay-script {
-  text-align: center;
-  margin-top: 10em;
-  z-index: auto;
+  padding: 50px;
+  text-emphasis: stroke;
+  font-size:150%;
+  text-align: left;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  position: absolute;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: flex-start;
 }
 
 footer { 
