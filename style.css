@@ -11,7 +11,7 @@ h1 {
 .grid-container {
   display: grid;
   grid-template-columns: 0.2fr 1fr 0.2fr;
-  grid-template-rows: 0.1fr 41px 1fr;
+  grid-template-rows: 0.1fr 36px 1fr;
   gap: 3px;
   grid-template-areas:
     "header header header"
@@ -21,7 +21,7 @@ h1 {
 }
 
 body {
-  font-family: Open Sans;
+ font-family: 'Source Sans Pro', sans-serif;
 }
 
 header { 
@@ -39,33 +39,29 @@ header {
   margin-top: 5em;
 }
 
+.box {
+  
+}
+
 
 .headerlogo {
   margin-top:20px;
+  margin-left:20px;
   max-width: 300px;
-  float: center;
-}
-
- {
- display: block;
- font-size: 2em;
- margin-block-start: 0.67em;
- margin-block-end: 0.67em;
- margin-inline-start: 0px;
- margin-inline-end: 0px;
+  float: left;
 }
 
 nav { 
+position: sticky;
+top: 0;
 grid-area: nav; 
 text-align: center;
-position: sticky;
-top:0;
+z-index: 5;
 }
 
 ul {
   display: flex;
-  justify-content: space-around;
-  list-style-type: none;
+  justify-content: space-evenly;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -75,12 +71,12 @@ ul {
 media = "screen and (min-width: 650px)"
 @ media screen and (min-width: 885px)
 nav ul {
+  
   list-style: none;
-  margin: 0;
-  padding: 0;
+  padding: 5px;
 }
 
-li {
+li { 
   display: inline-block;
 }
 
@@ -94,10 +90,10 @@ li a {
 li a:hover {
   background-color: red;
   color: white;
+  border-radius: 6px;
 }
 
 main { grid-area: main;
-
 }
 
 .hero-image-container {
@@ -105,28 +101,50 @@ main { grid-area: main;
   width: auto;
   height: 100%;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  margin: 0;
   text-align: center;
+  background-repeat: no-repeat;
+  z-index: 1;
 }
 
 .overlay-script {
-  padding: 50px;
+  background: rgba(132, 144, 175, 0.4);
+  padding: 5%;
   text-emphasis: stroke;
-  font-size:150%;
+  font-size: 2vw;
   text-align: left;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -55%);
   position: absolute;
+  left:4%;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-content: flex-start;
+}
+
+.information-container {
+  background: #EEF5FC;
+  text-align: center;
+  padding: 2%;
+  margin: 5%;
+  border: 2px;
+  z-index: 2;
+}
+
+.donatebutton {
+  background-color: red;
+  border-radius: 5px;
+  border: white;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 12px 2px;
+  cursor: pointer;
+}
+
+.donatebutton:hover {
+  color: red;
+  background-color: white;
 }
 
 footer { 
@@ -148,10 +166,3 @@ background-color: pink;
     min-height: 200px; 
   }
 }
-
-/* For presentation only, no need to copy the code below 
-.grid-container * {
-  border: 1px solid black;
-  position: relative;
-}
-*/
