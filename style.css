@@ -1,13 +1,18 @@
 html, body, .grid-container { height: 100%; margin: 0; }
 
+h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 0.2fr 1fr 0.2fr;
-  grid-template-rows: 150px 1fr 100px;
-  gap:  10px;
+  grid-template-rows: 0.1fr 43px 1fr 100px;
+  gap: 3px;
   grid-template-areas:
     "header header header"
-    "nav main aside"
+    "nav nav nav"
+    "main main main"
     "footer footer footer";
 }
 
@@ -15,27 +20,95 @@ body {
   font-family: Open Sans;
 }
 
-header { grid-area: header; 
+header { 
+ display: flex;
+ justify-content: center;
+ grid-area:header; 
+ position: relative;
+ text-align:center;
  background-color: white;
+ border-inline-start: 0px;
 }
 
-.maintitle {
-  text-align: center
+.timestamp {
+  margin-left: 3em;
+  margin-top: 5em;
+}
+
+
+.headerlogo {
+  margin-top:20px;
+  max-width: 300px;
+  float: center;
+}
+
+ {
+ display: block;
+ font-size: 2em;
+ margin-block-start: 0.67em;
+ margin-block-end: 0.67em;
+ margin-inline-start: 0px;
+ margin-inline-end: 0px;
+}
+
+nav { 
+grid-area: nav; 
+text-align: center;
+position: sticky;
+top:0;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #A3D5FF;
+}
+
+li {
+  display: inline-block;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 9px 15px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: red;
+  color: white;
 }
 
 main { grid-area: main;
-background-color: grey;
+
 }
 
-nav { grid-area: nav; 
-background-color: lightblue;
+.hero-image-container {
+  background-image: url("NewHeroImage.jpg");
+  width: auto;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  text-align: center;
 }
 
-aside { grid-area: aside; 
-background-color: orange;
+.overlay-script {
+  text-align: center;
+  margin-top: 10em;
+  z-index: auto;
 }
 
-footer { grid-area: footer; 
+footer { 
+grid-area: footer; 
+text-align: center;
 background-color: pink;
 }
 
@@ -43,12 +116,10 @@ background-color: pink;
 @media screen and (max-width:460px) {
   .grid-container {
     display: block;
-   
   }
   header,
   nav,
   main,
-  aside,
   footer {
     width: 100%;
     min-height: 200px; 
