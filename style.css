@@ -103,6 +103,7 @@ li a:hover {
 
   nav { 
     position: relative;
+
   }
 }
 
@@ -129,8 +130,19 @@ main { grid-area: main;
 
  .overlay-script {
   height: 200px;
+  font-size: 3%;
  }
-}
+
+ .hero-image-container {
+  background-image: url("NewHeroImage.jpg");
+  width: auto;
+  height: 450px;
+ }
+
+ h1 {
+ font-size: 2%;
+ }
+} 
 
 .overlay-script {
   background: rgba(132, 144, 175, 0.4);
@@ -176,6 +188,12 @@ main { grid-area: main;
   margin: 2%;
 }
 
+.Bibleverse {
+  margin: 8px;
+  margin-top: 12px;
+  padding: 10px;
+}
+
 .video-container {
   margin: 4%;
 }
@@ -187,27 +205,29 @@ main { grid-area: main;
 .blockout {
   background-color:#DE8C7D;
   box-sizing: border-box;
-  padding: 3px;
+  padding: 12px;
   width: 100%;
 }
 
 .facts {
 display: flex;
-justify-content: space-evenly;
+justify-content: center;
+margin-top: 25px;
 }
 
-.first-fact {
-background-color: #A3D5FF
+.expand-text {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.second-fact {
-background-color: #DE8C7D
+@media screen and (max-width: 700px) {
+ .facts {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+ }
 }
-
-.third-fact {
-background-color: black
-}
-
 footer { 
 grid-area: footer; 
 text-align: center;
