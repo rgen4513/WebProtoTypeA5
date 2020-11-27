@@ -1,5 +1,9 @@
 html, body, .grid-container { height: 100%; margin: 0; }
 
+h3 {
+  font-size: 26px;
+}
+
 h2 {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -11,7 +15,7 @@ h1 {
 .grid-container {
   display: grid;
   grid-template-columns: 0.2fr 1fr 0.2fr;
-  grid-template-rows: 0.1fr 36px 1fr;
+  grid-template-rows: 0.1fr 36pxfr 1fr;
   gap: 3px;
   grid-template-areas:
     "header header header"
@@ -103,7 +107,6 @@ li a:hover {
 
   nav { 
     position: relative;
-
   }
 }
 
@@ -112,14 +115,14 @@ main { grid-area: main;
 
 .hero-image-container {
   background-image: url("NewHeroImage.jpg");
+  position: relative;
+  z-index: 1;
   width: auto;
   height: 100%;
   background-position: center;
   background-size: cover;
-  position: relative;
   text-align: center;
   background-repeat: no-repeat;
-  z-index: 1;
 }
 
 @media screen and (max-width: 600px) {
@@ -135,9 +138,15 @@ main { grid-area: main;
 
  .hero-image-container {
   background-image: url("NewHeroImage.jpg");
+  position: relative;
+  z-index: 1;
   width: auto;
-  height: 450px;
- }
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  background-repeat: no-repeat;
+}
 
  h1 {
  font-size: 2%;
@@ -175,6 +184,7 @@ main { grid-area: main;
 }
 
 .information-container {
+  background-color: white;
   text-align: center;
   padding: 2%;
   border: 2px;
@@ -212,7 +222,7 @@ main { grid-area: main;
 .facts {
 display: flex;
 justify-content: center;
-margin-top: 25px;
+margin-top: 4%;
 }
 
 .expand-text {
@@ -228,10 +238,23 @@ margin-top: 25px;
   justify-content: space-around;
  }
 }
+
+.input-box {
+  background-color: lightblue;
+  padding: 10px;
+}
+
 footer { 
+display: flex;
+justify-content: space-evenly;
 grid-area: footer; 
 text-align: center;
 background-color: pink;
+}
+
+.footer-box {
+  margin: 10px;
+  
 }
 
 /*---Media Query for Responsive Screen Adaptation*/
