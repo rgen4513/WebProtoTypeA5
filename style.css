@@ -287,8 +287,7 @@ background-color: pink;
   }
   header,
   nav,
-  main,
-  footer {
+  main {
     width: 100%;
     min-height: 200px; 
   }
