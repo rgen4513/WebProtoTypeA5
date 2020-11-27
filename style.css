@@ -59,6 +59,10 @@ header {
   max-width: 300px;
 }
 
+.headerlogo:hover {
+border: 2px solid red;
+}
+
 #twitter-bird:hover {
 background-color: white;
 border-radius: 10px;
